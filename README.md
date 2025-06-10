@@ -1,4 +1,4 @@
-<h1>Insturctions</h1>
+<h3>Setup</h3>
 <ol>
   <li>Create a .env file</li>
   <li>Write "DISCORD_TOKEN= ***TOKEN HERE***"</li>
