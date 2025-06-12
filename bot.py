@@ -127,12 +127,13 @@ class HomeMenu(discord.ui.View):
                         "1. Bodyweight Calf Raise",
                         "2. Seated Calf Raise",
                     ])
-
         message = "\n".join(lines)
-        await interaction.response.edit_message(
-            content=message,
-            view=None
+        embed = discord.Embed(
+            title="Home Workout",
+            description=message,
+            color=discord.Color.blurple()
         )
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
 class GymMenu(discord.ui.View):
     @discord.ui.select(
@@ -257,10 +258,12 @@ class GymMenu(discord.ui.View):
                     ])
 
         message = "\n".join(lines)
-        await interaction.response.edit_message(
-            content=message,
-            view=None
+        embed = discord.Embed(
+            title="Gym Workout",
+            description=message,
+            color=discord.Color.blurple()
         )
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
 @bot.event
@@ -274,89 +277,114 @@ async def workout(interaction: discord.Interaction):
 
 @tree.command(name="info", description="List of possible commands")
 async def info(interaction: discord.Interaction):
-    await interaction.response.send_message("\n\n"
-                   "Commands:\n"
-                   ".tips\n"
-                   "-> some simple exercise advice\n"
-                   ".workout\n"
-                   "depending on your setting, discover what exercises are effective for each muscle\n"
-                   ".ppl\n"
-                   "-> description of push, pull, legs workout split\n"
-                   ".ul\n"
-                   "-> description of upper lower workout split\n"
-                   ".split\n"
-                   "-> other recommended split\n"
-                   "    ", ephemeral=True)
+    embed = discord.Embed(
+        title="Commands",
+        description=(
+                ".tips\n"
+                "-> some simple exercise advice\n"
+                ".workout\n"
+                "depending on your setting, discover what exercises are effective for each muscle\n"
+                ".ppl\n"
+                "-> description of push, pull, legs workout split\n"
+                ".ul\n"
+                "-> description of upper lower workout split\n"
+                ".split\n"
+                "-> other recommended split\n"
+                "    "
+        ),
+        color=discord.Color.blurple()
+    )
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 @tree.command(name="tips", description="Helpful information about common workout practices")
 async def tips(interaction: discord.Interaction):
-    await interaction.response.send_message("\n\n"
-                   "Workout Tips:\n"
-                   "1. Make sure each exercise is performed for 2-4 sets.\n"
-                   "2. Each set should be between 6-15 reps.\n"
-                   "3. Take short breaks inbetween sets.\n"
-                   "4. If you don't feel a given exercise in its intended muscle, feel free to change exercises once the current set is done.\n"
-                   "5. For information about how to perform each exercise, consult images on machines around your gym or google the phrase provided in the .workout section.\n"
-                   "6. Perform a workout 4-6 days each week for best results."
-                   "    ", ephemeral=True)
+    embed = discord.Embed(
+        title="Workout Tips",
+        description=(
+                "1. Make sure each exercise is performed for 2-4 sets.\n"
+                "2. Each set should be between 6-15 reps.\n"
+                "3. Take short breaks inbetween sets.\n"
+                "4. If you don't feel a given exercise in its intended muscle, feel free to change exercises once the current set is done.\n"
+                "5. For information about how to perform each exercise, consult images on machines around your gym or google the phrase provided in the .workout section.\n"
+                "6. Perform a workout 4-6 days each week for best results."
+                "    "
+        ),
+        color=discord.Color.blurple()
+    )
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 @tree.command(name="ppl", description="Example Push, Pull, Legs Split")
 async def ppl(interaction: discord.Interaction):
-    await interaction.response.send_message("\n\n"
-                   "Push, Pull, Legs Split:\n"
-                   "Day 1\n"
-                   "-> 18-22 Sets\n"
-                   "-> Focus on Tricep, Shoulder, and Chest exercises\n"
-                   "Day 2\n"
-                   "-> 15-20 Sets\n"
-                   "-> Focus on Back and Bicep exercises\n"
-                   "Day 3\n"
-                   "-> 18-22 Sets\n"
-                   "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
-                   "Day 4\n"
-                   "-> Rest\n"
-                   "Day 5\n"
-                   "-> Rest again or Start from Day 1\n"
-                   "    ", ephemeral=True)
+    embed = discord.Embed(
+        title="Push, Pull, Legs Split",
+        description=(
+                "Day 1\n"
+                "-> 18-22 Sets\n"
+                "-> Focus on Tricep, Shoulder, and Chest exercises\n"
+                "Day 2\n"
+                "-> 15-20 Sets\n"
+                "-> Focus on Back and Bicep exercises\n"
+                "Day 3\n"
+                "-> 18-22 Sets\n"
+                "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
+                "Day 4\n"
+                "-> Rest\n"
+                "Day 5\n"
+                "-> Rest again or Start from Day 1\n"
+                "    "
+        ),
+        color=discord.Color.blurple()
+    )
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 @tree.command(name="ul", description="Example Upper, Lower Split")
 async def ul(interaction: discord.Interaction):
-    await interaction.response.send_message("\n\n"
-                   "Upper, Lower Split:\n"
-                   "Day 1\n"
-                   "-> 20-30 Sets\n"
-                   "-> Focus on Tricep, Bicep, Back, Shoulder, and Chest exercises\n"
-                   "Day 2\n"
-                   "-> 20-30 Sets\n"
-                   "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
-                   "Day 3\n"
-                   "-> Rest\n"
-                   "Day 4\n"
-                   "-> Rest again or Start from Day 1\n"
-                   "    ", ephemeral=True)
+    embed = discord.Embed(
+        title="Upper, Lower Split",
+        description=(
+                "Day 1\n"
+                "-> 20-30 Sets\n"
+                "-> Focus on Tricep, Bicep, Back, Shoulder, and Chest exercises\n"
+                "Day 2\n"
+                "-> 20-30 Sets\n"
+                "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
+                "Day 3\n"
+                "-> Rest\n"
+                "Day 4\n"
+                "-> Rest again or Start from Day 1\n"
+                "    "
+        ),
+        color=discord.Color.blurple()
+    )
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 @tree.command(name="split", description="Other Example Workout Split")
 async def split(interaction: discord.Interaction):
-    await interaction.response.send_message("\n\n"
-                   "Other Split:\n"
-                   "Day 1\n"
-                   "-> 15-20 Sets\n"
-                   "-> Focus on Shoulder and Chest exercises\n"
-                   "Day 2\n"
-                   "-> 15-20 Sets\n"
-                   "-> Focus on Back exercises\n"
-                   "Day 3\n"
-                   "-> 15-20 Sets\n"
-                   "-> Focus on Tricep and Bicep exercises\n"
-                   "Day 4\n"
-                   "-> Rest\n"
-                   "Day 5\n"
-                   "-> 15-20 Sets\n"
-                   "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
-                   "Day 5\n"
-                   "-> Rest\n"
-                   "Day 6\n"
-                   "-> Start from Day 1\n"
-                   "    ", ephemeral=True)
+    embed = discord.Embed(
+        title="Other Split",
+        description=(
+                "Day 1\n"
+                "-> 15-20 Sets\n"
+                "-> Focus on Shoulder and Chest exercises\n"
+                "Day 2\n"
+                "-> 15-20 Sets\n"
+                "-> Focus on Back exercises\n"
+                "Day 3\n"
+                "-> 15-20 Sets\n"
+                "-> Focus on Tricep and Bicep exercises\n"
+                "Day 4\n"
+                "-> Rest\n"
+                "Day 5\n"
+                "-> 15-20 Sets\n"
+                "-> Focus on Quad, Hamstring, Glute, Ab, and Calf exercises\n"
+                "Day 5\n"
+                "-> Rest\n"
+                "Day 6\n"
+                "-> Start from Day 1\n"
+                "    "
+        ),
+        color=discord.Color.blurple()
+    )
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
