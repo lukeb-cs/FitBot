@@ -280,15 +280,15 @@ async def info(interaction: discord.Interaction):
     embed = discord.Embed(
         title="Commands",
         description=(
-                ".tips\n"
+                "/tips\n"
                 "-> some simple exercise advice\n"
-                ".workout\n"
+                "/workout\n"
                 "depending on your setting, discover what exercises are effective for each muscle\n"
-                ".ppl\n"
+                "/ppl\n"
                 "-> description of push, pull, legs workout split\n"
-                ".ul\n"
+                "/ul\n"
                 "-> description of upper lower workout split\n"
-                ".split\n"
+                "/split\n"
                 "-> other recommended split\n"
                 "    "
         ),
@@ -305,7 +305,7 @@ async def tips(interaction: discord.Interaction):
                 "2. Each set should be between 6-15 reps.\n"
                 "3. Take short breaks inbetween sets.\n"
                 "4. If you don't feel a given exercise in its intended muscle, feel free to change exercises once the current set is done.\n"
-                "5. For information about how to perform each exercise, consult images on machines around your gym or google the phrase provided in the .workout section.\n"
+                "5. For information about how to perform each exercise, consult images on machines around your gym or google the phrase provided in the /workout section.\n"
                 "6. Perform a workout 4-6 days each week for best results."
                 "    "
         ),
