@@ -283,7 +283,7 @@ async def info(interaction: discord.Interaction):
                 "/tips\n"
                 "-> some simple exercise advice\n"
                 "/workout\n"
-                "depending on your setting, discover what exercises are effective for each muscle\n"
+                "->depending on your setting, discover what exercises are effective for each muscle\n"
                 "/ppl\n"
                 "-> description of push, pull, legs workout split\n"
                 "/ul\n"
