@@ -20,6 +20,6 @@
 
 ## Tech Stack
 
-- Language: Python3
-- Discord's Bot API
+- **Language**: Python3
+- **API**: Discord's Bot API
 
