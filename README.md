@@ -18,7 +18,7 @@
 - Provides helpful insights into common exercise practices
 
 
-## Tech Stack
+## Technologies Used
 
 - **Language**: Python3
 - **API**: Discord's Bot API
