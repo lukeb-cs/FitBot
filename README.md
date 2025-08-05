@@ -20,6 +20,6 @@
 
 ## Tech Stack
 
-- Python 3.x
+- Language: Python3
 - Discord's Bot API
 
