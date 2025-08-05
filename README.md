@@ -2,6 +2,11 @@
 
 **FitBot** is a Discord bot built using Python and the [discord.py](https://discordpy.readthedocs.io/en/stable/) library. It aims to provide users with fitness-related tools, routines, and interactions directly within Discord servers.
 
+## Demo
+
+![Discord Screenshot 1](type.png)
+![Discord Screenshot 2](select.png)
+
 
 ## Resources
 
